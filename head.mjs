@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed🙃: [${actual}] === [${expected}]`);
-    return;
-  }
-  console.log(`Assertion Failed🤣: [${actual}] !== [${expected}]`);
-};
+import { assertEqual } from "./assertEqual.mjs";
 
 const head = function(array) {
   if (array !== null && Array.isArray(array) && array.length > 0) {
