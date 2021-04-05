@@ -1,6 +1,6 @@
 import { assertEqual } from "./assertEqual.mjs";
 
-const eqArrays = function(array1, array2) {
+export const eqArrays = function(array1, array2) {
   if (array1.length === array2.length) {
     for (let index = 0; index < array1.length; index++) {
       if (array1[index] !== array2[index]) {

@@ -1,16 +1,26 @@
 import { assertArraysEqual } from "./assertArraysEqual.mjs";
 
-let flattenArray = [];
-const flatten = function(nestedArray) {
+// const flatten = function(nestedArray, flattenArray) {
+//     for (const item of nestedArray) {
+//         if(Array.isArray(item)) {
+//             flatten(item, flattenArray);
+//         } else {
+//             flattenArray.push(item);
+//         }
+//     }
+
+//     return flattenArray;
+// }
+
+const flatten = function(nestedArray, flattenArray) {
     for (const item of nestedArray) {
         if(Array.isArray(item)) {
-            flatten(item);
+            flatten(item, flattenArray);
         } else {
             flattenArray.push(item);
         }
     }
-
     return flattenArray;
 }
 
-assertArraysEqual(flatten([[1, [2]], 3, [4, 5]]), [1, 2, 3, 4, 5]);
+assertArraysEqual(flatten([[1, [2]], 3, [4, 5]], []), [1, 2, 3, 4, 5]);
