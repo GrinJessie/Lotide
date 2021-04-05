@@ -1,7 +1,7 @@
 import { assertEqual } from "./assertEqual.mjs";
 import { eqArrays } from "./eqArrays.mjs";
 
-const eqObjects = (obj1, obj2) => {
+export const eqObjects = (obj1, obj2) => {
     if (Object.keys(obj1).length !== Object.keys(obj2).length) {
         return false;
     }
