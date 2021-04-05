@@ -1,16 +1,6 @@
-import { assertArraysEqual } from "./assertArraysEqual.mjs";
+const assertArraysEqual = require('../assertArraysEqual');
+const takeUntil = require('../takeUntil');
 
-const takeUntil = (array, callback) => {
-    const result = [];
-
-    for (const item of array) {
-        if (!callback(item)) {
-            result.push(item);
-        } else {
-            return result;
-        }
-    }
-};
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);

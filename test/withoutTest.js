@@ -1,14 +1,6 @@
-import { assertArraysEqual } from "./assertArraysEqual.mjs";
+const assertArraysEqual = require('../assertArraysEqual');
+const without = require('../without');
 
-const without = function(sourceArray, itemsToRemoveArray) {
-    return sourceArray.filter( item => {
-        if (itemsToRemoveArray.includes(item)) {
-            return false;
-        } else {
-            return true;
-        }
-    });
-}
 
 const originalArray = [0, 0, 0];
 without(originalArray, [0]);

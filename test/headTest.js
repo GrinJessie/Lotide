@@ -1,11 +1,6 @@
-import { assertEqual } from "./assertEqual.mjs";
+const assertEqual = require('../assertEqual');
+const head = require('../head');
 
-const head = function(array) {
-  if (array !== null && Array.isArray(array) && array.length > 0) {
-    return array[0];
-  }
-  return undefined;
-};
 
 assertEqual(head("not an Array"), undefined);
 assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
